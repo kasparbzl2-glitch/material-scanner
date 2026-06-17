@@ -1,4 +1,4 @@
-const backend = "https://TVUJ_BACKEND.pythonanywhere.com";
+const backend = "https://material-scanner-backend-1.onrender.com";
 
 Quagga.init({
     inputStream: {
