@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Přihlášení</title>
+</head>
+<body>
+    <h2>Přihlášení</h2>
+    <input id="pass" type="password" placeholder="Heslo">
+    <button onclick="login()">Přihlásit</button>
+
+    <script>
+        async function login() {
+            const pass = document.getElementById("pass").value;
+
+            const res = await fetch("https://TVUJ_BACKEND.pythonanywhere.com/login", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({password: pass})
+            });
+
+            if (res.ok) {
+                localStorage.setItem("auth", pass);
+                window.location.href = "scanner.html";
+            } else {
+                alert("Špatné heslo");
+            }
+        }
+    </script>
+</body>
+</html>
