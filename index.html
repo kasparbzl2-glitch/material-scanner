@@ -13,11 +13,12 @@
         async function login() {
             const pass = document.getElementById("pass").value;
 
-            const res = await fetch("https://TVUJ_BACKEND.pythonanywhere.com/login", {
+            const res = await fetch("https://material-scanner-backend-1.onrender.com/login", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({password: pass})
             });
+
 
             if (res.ok) {
                 localStorage.setItem("auth", pass);
